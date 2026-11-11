@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Explorer — Analytics Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Serif+Devanagari:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<div id="progress"></div>
+
+<div class="page">
+  <div class="sticky">
+    <header class="top">
+      <div>
+        <div class="brand">THE EXPLORER</div>
+        <div class="sub" data-i18n="sub"></div>
+      </div>
+      <div class="langs" role="group" aria-label="Language">
+        <button data-lang="en">English</button>
+        <button data-lang="hi">हिन्दी</button>
+        <button data-lang="mr">मराठी</button>
+      </div>
+      <div class="filters">
+        <label><span data-i18n="lblCity"></span>
+          <select id="fCity"></select></label>
+        <label><span data-i18n="lblZone"></span>
+          <select id="fZone"></select></label>
+        <label><span data-i18n="lblCat"></span>
+          <select id="fCat">
+            <option value="all" data-i18n="allCats"></option>
+            <option value="cafe" data-i18n="cafes"></option>
+            <option value="restaurant" data-i18n="restaurants"></option>
+            <option value="street" data-i18n="street"></option>
+          </select></label>
+        <label><span data-i18n="lblPeriod"></span>
+          <select id="fRange">
+            <option value="3" data-i18n="p3"></option>
+            <option value="6" data-i18n="p6"></option>
+            <option value="12" data-i18n="p12"></option>
+            <option value="all" data-i18n="pAll" selected></option>
+          </select></label>
+      </div>
+    </header>
+    <nav class="navbar" id="navbar" aria-label="Chapters"></nav>
+  </div>
+
+  <div class="banner">
+    <span class="pill" data-i18n="demo"></span>
+    <span data-i18n="banner"></span>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow" data-i18n="heroEyebrow"></div>
+      <h1 data-i18n="heroTitle"></h1>
+      <div class="divider"></div>
+      <p data-i18n="heroP"></p>
+      <div style="margin-top:28px"><a class="cta" href="#ch1"><span data-i18n="cta"></span> <span class="arrow">→</span></a></div>
+      <div class="route-hint" data-i18n="hint"></div>
+    </section>
+
+    <div class="journey" id="journey">
+      <div class="spine-fill" id="spine"></div>
+      <div id="app"></div>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <span class="dotlive"></span><span data-i18n="footer"></span> &nbsp;·&nbsp;
+  <span data-i18n="updated"></span>: <span id="upd"></span> &nbsp;·&nbsp;
+  <span data-i18n="footerNote"></span>
+</footer>
+
+<button class="chat-fab" id="chatFab"><span data-i18n="chatBtn"></span></button>
+<section class="chat-panel" id="chatPanel" hidden aria-label="Ask Atlas">
+  <div class="chat-head">
+    <span data-i18n="chatTitle"></span>
+    <button id="chatClose" aria-label="Close">×</button>
+  </div>
+  <details class="chat-key">
+    <summary>AI settings (OpenAI key)</summary>
+    <input id="apiKey" type="password" autocomplete="off" placeholder="sk-… (kept in this browser tab only)">
+    <p>Your key is sent straight to OpenAI from this browser and is cleared when the tab closes. For a public site, use the server route instead so the key stays private.</p>
+  </details>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" type="text" autocomplete="off" maxlength="300">
+    <button class="btn" type="submit" data-i18n="chatSend"></button>
+  </form>
+  <a class="chat-link" href="https://survey-charts-4--9d418621.preview.emergentagent.com/?utm_source=share" target="_blank" rel="noopener">
+    Try also: Nova — Ask Anything ↗
+  </a>
+</section>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="engine.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
